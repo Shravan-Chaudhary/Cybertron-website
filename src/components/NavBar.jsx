@@ -86,7 +86,12 @@ const NavBar = ({ isMenuShown, setIsMenuShown }) => {
           {links.map(({ id, link }) => {
             return (
               <li key={id} className='p-4 uppercase cursor-pointer'>
-                <Link to={link} smooth duration={500}>
+                <Link
+                  onClick={() => setIsMenuShown(false)}
+                  to={link}
+                  smooth
+                  duration={500}
+                >
                   {link}
                 </Link>
               </li>
