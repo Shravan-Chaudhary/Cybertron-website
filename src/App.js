@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import NavBar from './components/NavBar'
+import HeroSection from './components/HeroSection'
+import Products from './components/Products'
+import DevApi from './components/DevApi'
+import Clients from './components/Clients'
+import Contact from './components/Contact'
 
 function App() {
+  const [isMenuShown, setIsMenuShown] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar isMenuShown={isMenuShown} setIsMenuShown={setIsMenuShown} />
+      <HeroSection isMenuShown={isMenuShown} />
+      <Products />
+      <DevApi />
+      <Clients />
+      <Contact />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
