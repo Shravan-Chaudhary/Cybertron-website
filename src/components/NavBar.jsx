@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GradientBtn from './GradientBtn'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { Link } from 'react-scroll'
 
 const NavBar = ({ isMenuShown, setIsMenuShown }) => {
   const [scrolled, setScrolled] = useState(false)
@@ -58,7 +59,9 @@ const NavBar = ({ isMenuShown, setIsMenuShown }) => {
                     key={id}
                     className='p-4 uppercase duration-200 hover:text-thBlue cursor-pointer'
                   >
-                    {link}
+                    <Link to={link} smooth duration={500}>
+                      {link}
+                    </Link>
                   </li>
                 )
               })}
@@ -83,7 +86,9 @@ const NavBar = ({ isMenuShown, setIsMenuShown }) => {
           {links.map(({ id, link }) => {
             return (
               <li key={id} className='p-4 uppercase cursor-pointer'>
-                {link}
+                <Link to={link} smooth duration={500}>
+                  {link}
+                </Link>
               </li>
             )
           })}
